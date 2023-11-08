@@ -1,0 +1,52 @@
+/*  your css code here. If applicable */
+ body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+      }
+      
+      #verification_heading {
+        font-size: 2em;
+        margin-top: 20px;
+      }
+      
+      #verification_subtext {
+        font-size: 1.2em;
+        margin-top: 10px;
+        margin-bottom: 30px;
+      }
+      
+      .code-container {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 30px;
+      }
+      
+      .code {
+        width: 40px;
+        height: 40px;
+        font-size: 1.5em;
+        text-align: center;
+        border: 1px solid #ccc;
+        margin-right: 10px;
+        border-radius: 5px;
+      }
+      
+      .code:last-of-type {
+        margin-right: 0;
+      }
+      
+      .code:focus {
+        outline: none;
+        border-color: #007bff;
+      }
+
+.container{
+	border:1px solid black;
+}
+.design{
+	background-color:darkgray;
+	flex-direction:column;
+	display:flex;
+	align-items:center;
+	justify-context:center;
+}
