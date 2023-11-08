@@ -1,33 +1,62 @@
 <!DOCTYPE html>
-
 <html>
-
 <head>
-	<link rel="stylesheet" href="styles.css">
+  <title>OTP Verification</title>
+  <style>
+    /* Add your CSS styles here */
+    .verification-container {
+      text-align: center;
+      margin: 50px auto;
+      width: 300px;
+    }
+
+    #verification_heading {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    #verification_subtext {
+      font-size: 16px;
+      color: #555;
+    }
+
+    .code-container {
+      display: flex;
+      justify-content: center;
+    }
+
+    .code {
+      width: 40px;
+      height: 40px;
+      text-align: center;
+      font-size: 20px;
+      border: 1px solid #ccc;
+      margin: 0 5px;
+    }
+  </style>
 </head>
-
 <body>
-	<!-- the entire body must be written by student -->
-	<h1 id = "verification_heading">
-		Verify Your Account
-	</h1>
-	<p id="verification_subtext">
-		We emailed you six digit code to acciojob@email.com Enter the below to comfirm your email address
-	</p>
-	<div class = "code-container">
-		<input class="code"type="number" placeholder="0"/>
-		<input class="code"type="number" placeholder="0"/>
-		<input class="code"type="number" placeholder="0"/>
-		<input class="code"type="number" placeholder="0"/>
-		<input class="code"type="number" placeholder="0"/>
-		<input class="code"type="number" placeholder="0"/>
-	</div>
-	<div class="footer">
-		This is design only. We didn't actually send you an email as we dont have your email, right?
-	</div>
-    <script type="text/javascript" src="./script.js">
-</script>
+  <div class="verification-container">
+    <h1 id="verification_heading">OTP Verification</h1>
+    <p id="verification_subtext">Enter the 6-digit code sent to your mobile number</p>
+    <div class="code-container">
+      <input class="code" type="text" maxlength="1" id="digit1" oninput="moveToNextInput(1)">
+      <input class="code" type="text" maxlength="1" id="digit2" oninput="moveToNextInput(2)">
+      <input class="code" type="text" maxlength="1" id="digit3" oninput="moveToNextInput(3)">
+      <input class="code" type="text" maxlength="1" id="digit4" oninput="moveToNextInput(4)">
+      <input class="code" type="text" maxlength="1" id="digit5" oninput="moveToNextInput(5)">
+      <input class="code" type="text" maxlength="1" id="digit6" oninput="moveToNextInput(6)">
+    </div>
+  </div>
 
+  <script>
+    function moveToNextInput(currentInput) {
+      if (event.inputType === "deleteContentBackward" && currentInput > 1) {
+        document.getElementById(`digit${currentInput - 1}`).focus();
+      } else if (currentInput < 6) {
+        document.getElementById(`digit${currentInput + 1}`).focus();
+      }
+    }
+  </script>
 </body>
-
 </html>
