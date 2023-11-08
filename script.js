@@ -1,22 +1,17 @@
-const otpInputs = document.querySelectorAll('.code');
+function focusNext(currentInput) {
+    const maxLength = parseInt(currentInput.getAttribute('maxlength'));
+    const nextInputId = parseInt(currentInput.id.split('-')[1]) + 1;
 
-// Add event listeners for OTP input fields
-otpInputs.forEach((input, index) => {
-    input.addEventListener('input', (event) => {
-        const currentInput = event.target;
-        const value = currentInput.value;
+    if (currentInput.value.length === maxLength && nextInputId <= 6) {
+        document.getElementById('code-' + nextInputId).focus();
+    }
+}
 
-        if (value.length === 1 && index < otpInputs.length - 1) {
-            otpInputs[index + 1].focus(); // Focus on the next input field
-        } else if (value.length === 0 && index > 0) {
-            otpInputs[index - 1].focus(); // Focus on the previous input field on backspace
-        }
-    });
+function focusPrev(currentInput) {
+    const prevInputId = parseInt(currentInput.id.split('-')[1]) - 1;
 
-    // Prevent non-numeric input
-    input.addEventListener('keydown', (event) => {
-        if (!/[0-9]/.test(event.key) && event.key !== 'Backspace') {
-            event.preventDefault();
-        }
-    });
-});
+    if (event.key === 'Backspace' && prevInputId >= 1) {
+        currentInput.value = '';
+        document.getElementById('code-' + prevInputId).focus();
+    }
+}

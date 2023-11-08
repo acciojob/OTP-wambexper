@@ -1,1 +1,27 @@
-/*  your css code here. If applicable */
+body{
+	border: 1px solid black;
+	padding: 50px;
+	border-radius: 12px;
+}
+h2,p{
+	text-align:center;
+}
+.code-container{
+	align-items: center;
+	justify-content: center;
+	display: flex;
+	gap: 12px;
+}
+.code{
+	outline: none;
+	color: gray;
+	text-align: center;
+	font-size: 45px;
+	width: 60px;
+	height: 60px;
+	border: 1px solid gray;
+	border-radius: 6px;
+}
+input[type="number"]::-webkit-inner-spin-button {
+	 display: none;
+}
