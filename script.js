@@ -1,17 +1,20 @@
-function focusNext(currentInput) {
-    const maxLength = parseInt(currentInput.getAttribute('maxlength'));
-    const nextInputId = parseInt(currentInput.id.split('-')[1]) + 1;
 
-    if (currentInput.value.length === maxLength && nextInputId <= 6) {
-        document.getElementById('code-' + nextInputId).focus();
-    }
-}
+    //your JS code here. If required.
+const codeInputs = document.querySelectorAll('.code');
 
-function focusPrev(currentInput) {
-    const prevInputId = parseInt(currentInput.id.split('-')[1]) - 1;
+codeInputs.forEach((input, index) => {
+    input.addEventListener('input', (event) => {
+        if (event.data !== null) {
+            if (index < codeInputs.length - 1) {
+                codeInputs[index + 1].focus();
+            }
+        }
+    });
 
-    if (event.key === 'Backspace' && prevInputId >= 1) {
-        currentInput.value = '';
-        document.getElementById('code-' + prevInputId).focus();
-    }
-}
+    input.addEventListener('keydown', (event) => {
+        if (event.key === 'Backspace' && index > 0) {
+            codeInputs[index - 1].focus();
+            codeInputs[index].value = '';
+        }
+    });
+});

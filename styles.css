@@ -1,27 +1,27 @@
-body{
-	border: 1px solid black;
-	padding: 50px;
-	border-radius: 12px;
-}
-h2,p{
-	text-align:center;
+/*  your css code here. If applicable */
+*{
+	width:99vw;
 }
 .code-container{
-	align-items: center;
-	justify-content: center;
-	display: flex;
-	gap: 12px;
+	display:flex;
 }
+
 .code{
-	outline: none;
-	color: gray;
-	text-align: center;
-	font-size: 45px;
-	width: 60px;
-	height: 60px;
-	border: 1px solid gray;
-	border-radius: 6px;
+	width: 120px;
+	height:80px;
+	display:flex;
+	justify-content:center;
+	align-item:center;
+	margin:25px;
+	font-size:50px;
+	padding:0px;
+	padding-left:0px;
 }
-input[type="number"]::-webkit-inner-spin-button {
-	 display: none;
+#verification_heading,p,.footer{
+	display:flex;
+	justify-content:center;
+}
+input:focus{
+	background: yellow;
+	color: red;
 }
